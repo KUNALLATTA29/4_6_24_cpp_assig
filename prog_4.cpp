@@ -6,15 +6,22 @@ using namespace std;
 int main() 
 {
     
-    string arr="kunallattaistoocool";
-    
-    map<char,int> arr1;
-    for(char it:arr){
-        arr1[it]++;
+    string s="hello kunal hello babu junu babu";
+    vector<string> words;
+    istringstream iss(s);
+    string word;
+    while(iss>>word){
+        words.push_back(word);
     }
     
-    for(auto it:arr1){
+    map<string,int>mapcount;
+    for(auto it:words){
+        mapcount[it]++;
+    }
+    for(auto it: mapcount){
         cout<<it.first<<" : "<<it.second<<endl;
     }
+    
+    
     return 0;
 }
